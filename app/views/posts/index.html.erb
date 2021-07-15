@@ -1,0 +1,15 @@
+<h3>views/posts/index.html.erb</h3>
+<table>
+  <tr>
+    <th>Latest ; </th>
+  </tr>
+</table>
+<% @posts.each do |post| %>
+  <div class="one_post">
+    <tr>
+      <td>●</td>
+      <td><%= post.content %></td>
+    </tr>
+  </div>
+<% end %>
+<%= link_to 'New tweet', new_post_path %>

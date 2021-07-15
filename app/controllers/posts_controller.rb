@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order(updated_at: :desc)
+    @posts = Post.order(created_at: :desc)
   end
   def new
     @post = Post.new
@@ -8,9 +8,20 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to new_post_path
+      redirect_to posts_path
     else
       render :new
+    end
+  end
+  def edit
+    @post = Post.find(params[:id])
+  end
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to posts_path, notice: "編集しました！"
+    else
+      render :edit
     end
   end
   private

@@ -8,8 +8,9 @@
   <div class="one_post">
     <tr>
       <td>●</td>
+      <td><%= link_to '編集', edit_post_path(post.id) %></td>
       <td><%= post.content %></td>
     </tr>
   </div>
 <% end %>
-<%= link_to 'New tweet', new_post_path %>
+<%= link_to '新規ツィート', new_post_path %>

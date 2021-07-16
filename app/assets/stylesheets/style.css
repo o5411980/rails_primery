@@ -1,0 +1,14 @@
+.header_text {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+.footer {
+  background-color: #fff;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.footer_text {
+  font-style: italic;
+}

@@ -1,18 +1,36 @@
-<%= form_with(model: @post, local: true, url: choose_new_or_edit) do |form| %>
-<% if @post.errors.any? %>
-  <div class="error_explanation">
-    <h2><%= @post.errors.count %>件のエラーがあります。</h2>
-    <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-  <div class="post_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit "Post" %>
-<% end %>
-<%= link_to 'all tweets', posts_path %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta  charset="UTF-8">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <title>ツィートアプリ課題</title>
+  </head>
+  <body>
+    <header>
+      <img src="../../assets/header_image.png" width="40">
+      <a class="header_text">ツィートアプリ課題</a>
+    </header>
+    <%= form_with(model: @post, local: true, url: choose_new_or_edit) do |form| %>
+    <% if @post.errors.any? %>
+      <div class="error_explanation">
+        <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+        <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <div class="post_content">
+        <%= form.label :content %>
+        <%= form.text_field :content %>
+      </div>
+      <%= form.submit "ツィート" %>
+    <% end %>
+    <%= link_to 'ツィート一覧に戻る', posts_path %>
+    <footer class="footer">
+      <a class="footer_text">WEF2107 OGO Yoichi</a>
+      <img src="../../assets/header_image.png" width="25">
+    </footer>
+  </body>
+</html>

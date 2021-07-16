@@ -1,17 +1,36 @@
-<h3>views/posts/index.html.erb</h3>
-<table>
-  <tr>
-    <th>Latest ; </th>
-  </tr>
-</table>
-<% @posts.each do |post| %>
-  <div class="one_post">
-    <tr>
-      <td>●</td>
-      <td><%= link_to '編集', edit_post_path(post.id) %></td>
-      <td><%= link_to '削除', post_path(post.id), method: :delete %></td>
-      <td><%= post.content %></td>
-    </tr>
-  </div>
-<% end %>
-<%= link_to '新規ツィート', new_post_path %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta  charset="UTF-8">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <title>ツィートアプリ課題</title>
+  </head>
+  <body>
+    <header>
+      <img src="../../assets/header_image.png" width="40">
+      <a class="header_text">ツィートアプリ課題</a>
+    </header>
+    <table>
+      <tr>
+        <%= link_to '新規ツィートを作成', new_post_path %>
+      </tr>
+      <tr>
+        <th>最新のツィート ; </th>
+      </tr>
+    </table>
+    <% @posts.each do |post| %>
+      <div class="one_post">
+        <tr>
+          <td>●</td>
+          <td><%= link_to '編集', edit_post_path(post.id) %></td>
+          <td><%= link_to '削除', post_path(post.id), method: :delete %></td>
+          <td><%= post.content %></td>
+        </tr>
+      </div>
+    <% end %>
+    <footer class="footer">
+      <a class="footer_text">WEF2107 OGO Yoichi</a>
+      <img src="../../assets/header_image.png" width="25">
+    </footer>
+  </body>
+</html>
